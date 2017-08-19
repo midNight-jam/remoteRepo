@@ -3,7 +3,7 @@ package Utils;
 
 public class MyMath{
  public static double multiply(double a, double b){
- 	return 0;
+ 	return x * y;
  }
 
  public static double divide(double a, double b){
