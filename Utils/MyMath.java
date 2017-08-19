@@ -7,7 +7,7 @@ public class MyMath{
  }
 
  public static double divide(double a, double b){
- 	return 0;
+ 	return x / y;
  }
 
 
