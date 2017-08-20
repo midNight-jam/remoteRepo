@@ -251,5 +251,34 @@ It will create a new commit that reverts the commit that we specified.
 > git diff <HASH1> <HASH2>
 
 
-Also, observe that after you have changed the commit message the commit HASH also changes, because the commit message is part of the HASH. And when the HASH changes that means the git history changes. 
+Also, observe that after you have changed the commit message the commit HASH also changes, because the commit message is part of the HASH. And when the HASH changes that means the git history changes.
+
 ------
+
+
+#25 git Stash
+
+stash the changes in to seperate place, they get carried over from branch, so stash is indepenedent of branches. 
+
+> git stash save "message"
+
+> git stash list 	(will have stashes with IDs)
+
+> git stash apply <STASHID>
+
+doesnt remove changes from the stash
+
+> git stash pop
+
+applies the changes and drop the stash
+
+> git stash drop <STASHID>
+
+drops the changes from the stash list
+
+> git stash clear 
+
+drops all the changes from the stash list 
+
+------
+
