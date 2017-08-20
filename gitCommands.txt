@@ -142,3 +142,113 @@ commits the staged files locally
 > git branch -a 						(confirm that the branch has been deleted remotely)
 
 ------
+
+
+#18 To bring a modified file to the current state from repo & loose ur changes
+
+> git checkout <filePatName>	(removes ur changes on the file & gets the latest from remote repo)
+
+------
+
+
+#19 To change your last commit message
+
+> git commit --amend -m "new message"		(completely replace the old message with the new one)
+
+> git commit --amend		(opens up VI edit message)
+
+Also, observe that after you have changed the commit message the commit HASH also changes, because the commit message is part of the HASH. And when the HASH changes that means the git history changes. Thus, we want to do it only for the changes owned by us. We shouldnt changes history for the changes which other people have already pulled.
+
+------
+
+
+#20 To view the changes included in your last commit
+
+> git log --stat (gives the details of the changes in the commit)
+
+------
+
+
+#21 To view the changes included in your last commit
+
+> git log --stat (gives the details of the changes in the commit)
+
+------
+
+
+#22 CherryPick, get your commit from one branch to another
+
+> git cherry-pick <commitHASH>		(brings the changes in the commit to current branch)
+
+
+CherryPick doesnt deletes the commit from the original branch, to do so use git reset.
+------
+
+
+
+#21 git reset
+
+> git reset --soft <HASH>
+
+soft will reset us to the commit that we have specified, but it will keep the changes in the staging area.
+
+> git reset --mixed / default (no option) <HASH>
+
+mixed will reset us to the commit that we have specified, but it will keep the changes in the working dir & NOT in the staging area.
+
+
+> git reset --hard <HASH>
+
+Will make all of our tracked files match the state they were in at the HASH that we specified, be careful cuz it will get rid of your changes.
+But leaves the untracked files untouched.
+
+------
+
+
+#22 Get rid of the Untracked Files
+
+> git clean -df 
+
+d : for untracked dir
+f : for untracked files
+
+------
+
+
+#23 Get changes back from git reset --hard
+
+We can be out of luck, if a lot of time has passed since we ran the git reset, because git garbage collects them (30 days).
+
+> git reflog  
+
+Shows the commit in the order in which we last referenced them, a walkthrough of what we have been doing.  
+
+Grab the HASH before the reset & use checkout
+
+git checkout <HASH>
+
+
+This leaves us in a detached Head state, means that we are not currently on a branch and this point will be trashed in future. So create a branch with this recovered backup. Now from that branch we can cherry pick the changes & bring it your branch for commit.
+
+------
+
+
+#24 Revert
+
+To undo some commit that other people have already pulled the changes.
+Revert creates new commit, to reverse the effect of an earlier commit.
+Its not going to modify or delete the exsisting commits, thus no rewriting the history. 
+
+> git revert <HASH>
+
+It will create a new commit that reverts the commit that we specified. 
+
+------
+
+
+#25 git diff between commits
+
+> git diff <HASH1> <HASH2>
+
+
+------
