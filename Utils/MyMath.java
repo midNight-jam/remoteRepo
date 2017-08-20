@@ -17,7 +17,8 @@ public class MyMath{
 
  public static double add(double a, double b){
  	// this method is addition
-  return a + b;
+ 	System.out.println("Adding...");
+ 	return a + b;
  }
 
 
