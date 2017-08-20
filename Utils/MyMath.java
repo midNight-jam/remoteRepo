@@ -16,7 +16,8 @@ public class MyMath{
 
 
  public static double add(double a, double b){
- 	return a + b;
+ 	// this method is addition
+  return a + b;
  }
 
 
