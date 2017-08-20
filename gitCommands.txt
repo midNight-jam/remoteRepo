@@ -142,3 +142,20 @@ commits the staged files locally
 > git branch -a 						(confirm that the branch has been deleted remotely)
 
 ------
+
+
+#18 To bring a modified file to the current state from repo & loose ur changes
+
+> git checkout <filePatName>	(removes ur changes on the file & gets the latest from remote repo)
+
+------
+
+
+#19 To change your last commit message
+
+> git commit --amend -m "new message"		(completely replace the old message with the new one)
+
+> git commit --amend		(opens up VI edit message)
+
+Also, observe that after you have changed the commit message the commit HASH also changes, because the commit message is part of the HASH. And when the HASH changes that means the git history changes. Thus, we want to do it only for the changes owned by us.
+------
