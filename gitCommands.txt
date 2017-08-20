@@ -282,3 +282,30 @@ drops all the changes from the stash list
 
 ------
 
+
+#25 git add
+
+> git add -A (default behavior for git add)
+
+Stage all of the changes (modofied, deleted, new) in the entire working tree, regardless of where you fire this cmd from.
+
+> git add -A <dirpath> 	
+
+adds only the changes found below this dir
+
+> git add -u (update)
+
+entire changes for the tracked files, but none for the untracked changes
+
+> git add .	(current dir)
+
+
+> git stash drop <STASHID>
+
+drops the changes from the stash list
+
+> git stash clear 
+
+drops all the changes from the stash list 
+
+------
