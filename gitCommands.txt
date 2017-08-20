@@ -1,0 +1,144 @@
+git commands
+
+///////////////////////
+//// Fundamentals
+///////////////////////
+
+#1 for Version :  
+
+> git --version
+
+------
+
+#2 Setting the config values : 
+
+> git config --global user.name "Jayam Malviya"
+> git config --global user.email "malviya.jayam@gmail.com"
+
+getting the list of set config values
+
+> git config --list
+
+------
+
+#3 Help
+
+> git help configName
+> git configName --help
+
+------
+
+#4 Initializing a remote repo from the exsisting code
+
+from the source dir
+
+> git init 				(creates a ".git" dir that maps our project with git)
+
+------
+
+#5 for getting the status of your local repo
+
+> git status
+
+------
+
+#6 Creating a .gitignore file for ignoring the files from git to track.
+
+> touch .gitignore 			(creates the empty .gitignore file)
+
+add all the file names or reg expression to ignore the files.
+
+------
+
+#7 Adding files to the staging area.
+
+> git add -A
+
+-A = all
+
+------
+
+
+#8 Removiing the files from staged area.
+
+> git reset <filePath> 		(removes the file from the stage area)
+
+> git reset  				(removes all the staged files)
+
+------
+
+#9 Commiting the changes
+
+> git commit -m "commit message" 
+
+commits the staged files locally
+
+------
+
+#10 Commit logs
+
+> git log 				(get the commit log in default view)
+
+
+> git log --pretty=oneline 		(get the commit log in oneline view)
+
+------
+
+#11 Clone repo locally
+
+> git clone <clone URL> 
+
+------
+
+#12 Viewing the information about the remote repo
+
+> git remote -v 		(gets the info about the remote repo)
+
+> git branch -a 		(get all the branches present for this repo)
+
+------
+
+#13 Push & Pull
+
+> git push origin master
+
+> git pull origin master
+
+------
+
+#14 Create a branch for feature
+
+> git branch calc-divide  		(creates the branch locally)
+
+> git checkout calc-divide   	(switch to the newly created branch)
+
+> git branch   					(logs all the branches present on local)
+
+------
+
+#15 After commit push branch to remote
+
+> git push -u origin calc-divide	(pushes the branch to remote)
+
+------
+
+
+#16 Merge a branch (merge calc-divide to master)
+
+> git checkout master		(first switch to master)
+> git pull origin master 	(get the latest on master)
+> git branch --merged		(to get the list of merged branches to master)
+> git merge calc-divide		(merge the calc-divide branch to master locally)
+> git push origin master	(push the merged master to remote)
+
+------
+
+
+#17 Deleting a branch after it has been merged (delete calc-divide from remote)
+
+> git branch -d calc-divide				(delete branch locally)
+> git branch -a 						(confirm that the branch has been deleted locally)
+> git push origin --delete calc-divide	(delete the branch at remote)
+> git branch -a 						(confirm that the branch has been deleted remotely)
+
+------
