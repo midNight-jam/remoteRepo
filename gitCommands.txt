@@ -251,4 +251,5 @@ It will create a new commit that reverts the commit that we specified.
 > git diff <HASH1> <HASH2>
 
 
+Also, observe that after you have changed the commit message the commit HASH also changes, because the commit message is part of the HASH. And when the HASH changes that means the git history changes. 
 ------
