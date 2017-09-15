@@ -1,2 +1,315 @@
 # remoteRepo
 git excercise
+
+
+git commands
+
+///////////////////////
+//// Fundamentals
+///////////////////////
+
+#1 for Version :  
+
+> git --version
+
+------
+
+#2 Setting the config values : 
+
+> git config --global user.name "Jayam Malviya"
+> git config --global user.email "malviya.jayam@gmail.com"
+
+getting the list of set config values
+
+> git config --list
+
+------
+
+#3 Help
+
+> git help configName
+> git configName --help
+
+------
+
+#4 Initializing a remote repo from the exsisting code
+
+from the source dir
+
+> git init 				(creates a ".git" dir that maps our project with git)
+
+------
+
+#5 for getting the status of your local repo
+
+> git status
+
+------
+
+#6 Creating a .gitignore file for ignoring the files from git to track.
+
+> touch .gitignore 			(creates the empty .gitignore file)
+
+add all the file names or reg expression to ignore the files.
+
+------
+
+#7 Adding files to the staging area.
+
+> git add -A
+
+-A = all
+
+------
+
+
+#8 Removiing the files from staged area.
+
+> git reset <filePath> 		(removes the file from the stage area)
+
+> git reset  				(removes all the staged files)
+
+------
+
+#9 Commiting the changes
+
+> git commit -m "commit message" 
+
+commits the staged files locally
+
+------
+
+#10 Commit logs
+
+> git log 				(get the commit log in default view)
+
+
+> git log --pretty=oneline 		(get the commit log in oneline view)
+
+------
+
+#11 Clone repo locally
+
+> git clone <clone URL> 
+
+------
+
+#12 Viewing the information about the remote repo
+
+> git remote -v 		(gets the info about the remote repo)
+
+> git branch -a 		(get all the branches present for this repo)
+
+------
+
+#13 Push & Pull
+
+> git push origin master
+
+> git pull origin master
+
+------
+
+#14 Create a branch for feature
+
+> git branch calc-divide  		(creates the branch locally)
+
+> git checkout calc-divide   	(switch to the newly created branch)
+
+> git branch   					(logs all the branches present on local)
+
+------
+
+#15 After commit push branch to remote
+
+> git push -u origin calc-divide	(pushes the branch to remote)
+
+------
+
+
+#16 Merge a branch (merge calc-divide to master)
+
+> git checkout master		(first switch to master)
+> git pull origin master 	(get the latest on master)
+> git branch --merged		(to get the list of merged branches to master)
+> git merge calc-divide		(merge the calc-divide branch to master locally)
+> git push origin master	(push the merged master to remote)
+
+------
+
+
+#17 Deleting a branch after it has been merged (delete calc-divide from remote)
+
+> git branch -d calc-divide				(delete branch locally)
+> git branch -a 						(confirm that the branch has been deleted locally)
+> git push origin --delete calc-divide	(delete the branch at remote)
+> git branch -a 						(confirm that the branch has been deleted remotely)
+
+------
+
+
+#18 To bring a modified file to the current state from repo & loose ur changes
+
+> git checkout <filePatName>	(removes ur changes on the file & gets the latest from remote repo)
+
+------
+
+
+#19 To change your last commit message
+
+> git commit --amend -m "new message"		(completely replace the old message with the new one)
+
+> git commit --amend		(opens up VI edit message)
+
+Also, observe that after you have changed the commit message the commit HASH also changes, because the commit message is part of the HASH. And when the HASH changes that means the git history changes. Thus, we want to do it only for the changes owned by us. We shouldnt changes history for the changes which other people have already pulled.
+
+------
+
+
+#20 To view the changes included in your last commit
+
+> git log --stat (gives the details of the changes in the commit)
+
+------
+
+
+#21 To view the changes included in your last commit
+
+> git log --stat (gives the details of the changes in the commit)
+
+------
+
+
+#22 CherryPick, get your commit from one branch to another
+
+> git cherry-pick <commitHASH>		(brings the changes in the commit to current branch)
+
+
+CherryPick doesnt deletes the commit from the original branch, to do so use git reset.
+------
+
+
+
+#21 git reset
+
+> git reset --soft <HASH>
+
+soft will reset us to the commit that we have specified, but it will keep the changes in the staging area.
+
+> git reset --mixed / default (no option) <HASH>
+
+mixed will reset us to the commit that we have specified, but it will keep the changes in the working dir & NOT in the staging area.
+
+
+> git reset --hard <HASH>
+
+Will make all of our tracked files match the state they were in at the HASH that we specified, be careful cuz it will get rid of your changes.
+But leaves the untracked files untouched.
+
+------
+
+
+#22 Get rid of the Untracked Files
+
+> git clean -df 
+
+d : for untracked dir
+f : for untracked files
+
+------
+
+
+#23 Get changes back from git reset --hard
+
+We can be out of luck, if a lot of time has passed since we ran the git reset, because git garbage collects them (30 days).
+
+> git reflog  
+
+Shows the commit in the order in which we last referenced them, a walkthrough of what we have been doing.  
+
+Grab the HASH before the reset & use checkout
+
+git checkout <HASH>
+
+
+This leaves us in a detached Head state, means that we are not currently on a branch and this point will be trashed in future. So create a branch with this recovered backup. Now from that branch we can cherry pick the changes & bring it your branch for commit.
+
+------
+
+
+#24 Revert
+
+To undo some commit that other people have already pulled the changes.
+Revert creates new commit, to reverse the effect of an earlier commit.
+Its not going to modify or delete the exsisting commits, thus no rewriting the history. 
+
+> git revert <HASH>
+
+It will create a new commit that reverts the commit that we specified. 
+
+------
+
+
+#25 git diff between commits
+
+> git diff <HASH1> <HASH2>
+
+
+Also, observe that after you have changed the commit message the commit HASH also changes, because the commit message is part of the HASH. And when the HASH changes that means the git history changes.
+
+------
+
+
+#25 git Stash
+
+stash the changes in to seperate place, they get carried over from branch, so stash is indepenedent of branches. 
+
+> git stash save "message"
+
+> git stash list 	(will have stashes with IDs)
+
+> git stash apply <STASHID>
+
+doesnt remove changes from the stash
+
+> git stash pop
+
+applies the changes and drop the stash
+
+> git stash drop <STASHID>
+
+drops the changes from the stash list
+
+> git stash clear 
+
+drops all the changes from the stash list 
+
+------
+
+
+#25 git add
+
+> git add -A (default behavior for git add)
+
+Stage all of the changes (modofied, deleted, new) in the entire working tree, regardless of where you fire this cmd from.
+
+> git add -A <dirpath> 	
+
+adds only the changes found below this dir
+
+> git add -u (update)
+
+entire changes for the tracked files, but none for the untracked changes
+
+> git add .	(current dir)
+
+
+> git stash drop <STASHID>
+
+drops the changes from the stash list
+
+> git stash clear 
+
+drops all the changes from the stash list 
+
+------
