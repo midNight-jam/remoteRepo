@@ -130,9 +130,13 @@ commits the staged files locally
 #16 Merge a branch (merge calc-divide to master)
 
 > git checkout master		(first switch to master)
+
 > git pull origin master 	(get the latest on master)
+
 > git branch --merged		(to get the list of merged branches to master)
+
 > git merge calc-divide		(merge the calc-divide branch to master locally)
+
 > git push origin master	(push the merged master to remote)
 
 ------
@@ -141,8 +145,11 @@ commits the staged files locally
 #17 Deleting a branch after it has been merged (delete calc-divide from remote)
 
 > git branch -d calc-divide				(delete branch locally)
+
 > git branch -a 						(confirm that the branch has been deleted locally)
+
 > git push origin --delete calc-divide	(delete the branch at remote)
+
 > git branch -a 						(confirm that the branch has been deleted remotely)
 
 ------
