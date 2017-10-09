@@ -321,7 +321,7 @@ drops all the changes from the stash list
 
 ------
 
-26  Temporarily stop tracking changes to file
+#26  Temporarily stop tracking changes to file
 
 This will tell git you want to start ignoring the changes to the file
 
@@ -330,3 +330,12 @@ This will tell git you want to start ignoring the changes to the file
 When you want to start keeping track again
 
  > git update-index --no-assume-unchanged path/to/file
+
+
+------
+
+#27  To check for unpushed changes
+
+> git log origin/master..HEAD
+
+> git diff origin/master..HEAD
