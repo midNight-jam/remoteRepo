@@ -339,3 +339,10 @@ When you want to start keeping track again
 > git log origin/master..HEAD
 
 > git diff origin/master..HEAD
+
+
+------
+
+#28  To cache your credentials, here we are caching it for 1000 hrs
+
+> git config credential.helper 'cache --timeout=60000'
