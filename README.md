@@ -346,3 +346,8 @@ When you want to start keeping track again
 #28  To cache your credentials, here we are caching it for 1000 hrs
 
 > git config credential.helper 'cache --timeout=60000'
+
+
+#29  To get history of the file (includes renames)
+
+> git log --follow <path/to/fileName>
