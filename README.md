@@ -58,7 +58,7 @@ add all the file names or reg expression to ignore the files.
 
 > git add -A
 
--A = all
+-A = all (adds even the untracked files!)
 
 ------
 
