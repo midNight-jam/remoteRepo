@@ -354,3 +354,11 @@ When you want to start keeping track again
 > git log --follow <path/to/fileName>
 
 ------
+
+------
+
+#31  To get url from which the repository was downloaded
+
+> git config --get remote.origin.url
+
+------
