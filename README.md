@@ -197,7 +197,7 @@ CherryPick doesnt deletes the commit from the original branch, to do so use git 
 
 
 
-#21 git reset
+#23 git reset
 
 > git reset --soft <HASH>
 
@@ -216,7 +216,7 @@ But leaves the untracked files untouched.
 ------
 
 
-#22 Get rid of the Untracked Files
+#24 Get rid of the Untracked Files
 
 > git clean -df 
 
@@ -226,7 +226,7 @@ f : for untracked files
 ------
 
 
-#23 Get changes back from git reset --hard
+#25 Get changes back from git reset --hard
 
 We can be out of luck, if a lot of time has passed since we ran the git reset, because git garbage collects them (30 days).
 
@@ -244,7 +244,7 @@ This leaves us in a detached Head state, means that we are not currently on a br
 ------
 
 
-#24 Revert
+#26 Revert
 
 To undo some commit that other people have already pulled the changes.
 Revert creates new commit, to reverse the effect of an earlier commit.
@@ -257,7 +257,7 @@ It will create a new commit that reverts the commit that we specified.
 ------
 
 
-#25 git diff between commits
+#27 git diff between commits
 
 > git diff <HASH1> <HASH2>
 
@@ -267,7 +267,7 @@ Also, observe that after you have changed the commit message the commit HASH als
 ------
 
 
-#25 git Stash
+#28 git Stash
 
 stash the changes in to seperate place, they get carried over from branch, so stash is indepenedent of branches. 
 
@@ -294,7 +294,7 @@ drops all the changes from the stash list
 ------
 
 
-#25 git add
+#29 git add
 
 > git add -A (default behavior for git add)
 
@@ -321,7 +321,7 @@ drops all the changes from the stash list
 
 ------
 
-#26  Temporarily stop tracking changes to file
+#30  Temporarily stop tracking changes to file
 
 This will tell git you want to start ignoring the changes to the file
 
@@ -334,7 +334,7 @@ When you want to start keeping track again
 
 ------
 
-#27  To check for unpushed changes
+#31  To check for unpushed changes
 
 > git log origin/master..HEAD
 
@@ -343,31 +343,31 @@ When you want to start keeping track again
 
 ------
 
-#28  To cache your credentials, here we are caching it for 1000 hrs
+#32  To cache your credentials, here we are caching it for 1000 hrs
 
 > git config credential.helper 'cache --timeout=60000'
 
 ------
 
-#29  To get history of the file (includes renames)
+#33  To get history of the file (includes renames)
 
 > git log --follow <path/to/fileName>
 
 ------
 
-#31  To get url from which the repository was downloaded
+#34  To get url from which the repository was downloaded
 
 > git config --get remote.origin.url
 
 ------
 
-#32  To get the current commit hash of local head
+#35  To get the current commit hash of local head
 
 > git show HEAD 
 
 ------
 
-#33  To get the changes done on a single file via two commits
+#36  To get the changes done on a single file via two commits
 
 > git diff hash1..hash2 -- filepath
 
