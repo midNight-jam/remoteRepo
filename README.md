@@ -355,10 +355,20 @@ When you want to start keeping track again
 
 ------
 
-------
-
 #31  To get url from which the repository was downloaded
 
 > git config --get remote.origin.url
+
+------
+
+#32  To get the current commit hash of local head
+
+> git show HEAD 
+
+------
+
+#33  To get the changes done on a single file via two commits
+
+> git diff hash1..hash2 -- filepath
 
 ------
