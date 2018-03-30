@@ -372,3 +372,9 @@ When you want to start keeping track again
 > git diff hash1..hash2 -- filepath
 
 ------
+
+#37  To rename dir/file changes in git
+
+> git mv _old name_    _new name_
+
+------
