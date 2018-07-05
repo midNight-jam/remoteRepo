@@ -168,6 +168,9 @@ commits the staged files locally
 
 > git commit --amend		(opens up VI edit message)
 
+> git commit --amend	--no-edit (amend without changing the commit message)
+
+
 Also, observe that after you have changed the commit message the commit HASH also changes, because the commit message is part of the HASH. And when the HASH changes that means the git history changes. Thus, we want to do it only for the changes owned by us. We shouldnt changes history for the changes which other people have already pulled.
 
 ------
@@ -179,15 +182,7 @@ Also, observe that after you have changed the commit message the commit HASH als
 
 ------
 
-
-#21 To view the changes included in your last commit
-
-> git log --stat (gives the details of the changes in the commit)
-
-------
-
-
-#22 CherryPick, get your commit from one branch to another
+#21 CherryPick, get your commit from one branch to another
 
 > git cherry-pick <commitHASH>		(brings the changes in the commit to current branch)
 
@@ -197,7 +192,7 @@ CherryPick doesnt deletes the commit from the original branch, to do so use git 
 
 
 
-#23 git reset
+#22 git reset
 
 > git reset --soft <HASH>
 
@@ -216,7 +211,7 @@ But leaves the untracked files untouched.
 ------
 
 
-#24 Get rid of the Untracked Files
+#23 Get rid of the Untracked Files
 
 > git clean -df 
 
@@ -226,7 +221,7 @@ f : for untracked files
 ------
 
 
-#25 Get changes back from git reset --hard
+#24 Get changes back from git reset --hard
 
 We can be out of luck, if a lot of time has passed since we ran the git reset, because git garbage collects them (30 days).
 
@@ -244,7 +239,7 @@ This leaves us in a detached Head state, means that we are not currently on a br
 ------
 
 
-#26 Revert
+#25 Revert
 
 To undo some commit that other people have already pulled the changes.
 Revert creates new commit, to reverse the effect of an earlier commit.
@@ -257,7 +252,7 @@ It will create a new commit that reverts the commit that we specified.
 ------
 
 
-#27 git diff between commits
+#26 git diff between commits
 
 > git diff <HASH1> <HASH2>
 
@@ -267,7 +262,7 @@ Also, observe that after you have changed the commit message the commit HASH als
 ------
 
 
-#28 git Stash
+#27 git Stash
 
 stash the changes in to seperate place, they get carried over from branch, so stash is indepenedent of branches. 
 
@@ -294,7 +289,7 @@ drops all the changes from the stash list
 ------
 
 
-#29 git add
+#28 git add
 
 > git add -A (default behavior for git add)
 
@@ -321,7 +316,7 @@ drops all the changes from the stash list
 
 ------
 
-#30  Temporarily stop tracking changes to file
+#29  Temporarily stop tracking changes to file
 
 This will tell git you want to start ignoring the changes to the file
 
@@ -334,7 +329,7 @@ When you want to start keeping track again
 
 ------
 
-#31  To check for unpushed changes
+#30  To check for unpushed changes
 
 > git log origin/master..HEAD
 
@@ -343,37 +338,37 @@ When you want to start keeping track again
 
 ------
 
-#32  To cache your credentials, here we are caching it for 1000 hrs
+#31  To cache your credentials, here we are caching it for 1000 hrs
 
 > git config credential.helper 'cache --timeout=60000'
 
 ------
 
-#33  To get history of the file (includes renames)
+#32  To get history of the file (includes renames)
 
 > git log --follow <path/to/fileName>
 
 ------
 
-#34  To get url from which the repository was downloaded
+#33  To get url from which the repository was downloaded
 
 > git config --get remote.origin.url
 
 ------
 
-#35  To get the current commit hash of local head
+#34  To get the current commit hash of local head
 
 > git show HEAD 
 
 ------
 
-#36  To get the changes done on a single file via two commits
+#35  To get the changes done on a single file via two commits
 
 > git diff hash1..hash2 -- filepath
 
 ------
 
-#37  To rename dir/file changes in git
+#36  To rename dir/file changes in git
 
 > git mv _old name_    _new name_
 
