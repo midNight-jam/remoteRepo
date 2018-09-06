@@ -373,3 +373,9 @@ When you want to start keeping track again
 > git mv _old name_    _new name_
 
 ------
+
+#37 Show contents of stash
+
+> git stash show -p stash@{1}
+
+------
