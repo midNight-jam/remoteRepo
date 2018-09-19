@@ -379,3 +379,9 @@ When you want to start keeping track again
 > git stash show -p stash@{1}
 
 ------
+
+#38 List stash with creation time
+
+> git stash list --date=local
+
+------
