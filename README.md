@@ -385,3 +385,9 @@ When you want to start keeping track again
 > git stash list --date=local
 
 ------
+
+#39 reset to a particular commit id
+
+> git reset --hard <commitHash>
+
+------
