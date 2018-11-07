@@ -388,6 +388,6 @@ When you want to start keeping track again
 
 #39 reset to a particular commit id
 
-> git reset --hard <commitHash>
+> git reset --hard commitHash
 
 ------
