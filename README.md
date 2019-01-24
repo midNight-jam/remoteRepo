@@ -395,7 +395,9 @@ When you want to start keeping track again
 #40 to create new alaises 
  edit the .gitconfig file and add a new section of [alias], each line begins with an alias, below are mine
  
- [alias]
+ 
+ 	[alias]
+	
 	logo = log --oneline -30
  
 	logoo = log --oneline -100
