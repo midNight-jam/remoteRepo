@@ -393,7 +393,7 @@ When you want to start keeping track again
 ------
 
 #40 to create new alaises 
- edit the .gitconfig file and add a new section of [alias], each line begins with an alias, below are mine
+ edit the .gitconfig file and add a new section of [alias], each line begins with an alias.Refer : https://git.wiki.kernel.org/index.php/Aliases. Below are mine
  
  
  	[alias]
