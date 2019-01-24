@@ -391,3 +391,31 @@ When you want to start keeping track again
 > git reset --hard commitHash
 
 ------
+
+#40 to create new alaises 
+ edit the .gitconfig file and add a new section of [alias], each line begins with an alias, below are mine
+ 
+ [alias]
+	logo = log --oneline -30
+ 
+	logoo = log --oneline -100
+ 
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative -30
+ 
+	st = status
+ 
+	ci = commit
+ 
+	br = branch
+ 
+	co = checkout
+ 
+	df = diff
+ 
+	dc = diff --cached
+ 
+	lg = log -p
+ 
+	who = shortlog -s --
+ 
+	sthl = stash list
