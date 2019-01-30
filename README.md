@@ -433,3 +433,9 @@ checkout will update the uopdate particular file in the working tree from the do
 > git fetch
 
 > git checkout origin/master -- path/to/file
+
+#42 bring whole branch in sync with another branch
+
+> git fetch
+
+> git checkout origin/master -- *
