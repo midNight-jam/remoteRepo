@@ -421,3 +421,15 @@ When you want to start keeping track again
 	who = shortlog -s --
  
 	sthl = stash list
+
+#41 update a single file from remote of a branch
+
+use git checkout <remote/branchName> -- path/to/file
+
+fetch will download all the latest changes, but will not put in your work area(current checked out code).
+
+checkout will update the uopdate particular file in the working tree from the downloaded changes
+
+> git fetch
+
+> git checkout origin/master -- path/to/file
