@@ -439,3 +439,7 @@ checkout will update the uopdate particular file in the working tree from the do
 > git fetch
 
 > git checkout origin/master -- *
+
+#43 move to a previous commit
+
+> git checkout commitHash
