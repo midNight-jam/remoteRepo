@@ -443,3 +443,8 @@ checkout will update the uopdate particular file in the working tree from the do
 #43 move to a previous commit
 
 > git checkout commitHash
+
+#44 remove a file from pull req
+
+> git checkout origin/master -- src/main/java/HelloWorld.java
+
