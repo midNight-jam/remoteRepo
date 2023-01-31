@@ -448,3 +448,10 @@ checkout will update the uopdate particular file in the working tree from the do
 
 > git checkout origin/master -- src/main/java/HelloWorld.java
 
+#45 Squash your last N commits into a single new commit
+
+> git reset --soft HEAD~3 
+<br/>
+
+> git commit -m "merging last 3 commits"
+
