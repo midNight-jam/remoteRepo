@@ -455,3 +455,10 @@ checkout will update the uopdate particular file in the working tree from the do
 
 > git commit -m "merging last 3 commits"
 
+#46 Merge master or main branch into your branch
+
+> git fetch origin main or git fetch origin master
+<br/>
+
+> git merge origin/main or git merge origin/master
+
