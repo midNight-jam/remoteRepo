@@ -462,3 +462,14 @@ checkout will update the uopdate particular file in the working tree from the do
 
 > git merge origin/main or git merge origin/master
 
+------
+
+#47 squash the commits in pull request, lets say there are 10 commits in pull request, I want to reduce it to 2
+
+> git reset --soft HEAD~10 
+
+> git commit -m "Squashed commit message 10 -> 1"
+
+> git push origin testbranch --force
+
+
